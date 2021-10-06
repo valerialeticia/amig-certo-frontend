@@ -7,8 +7,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - amigo-certo',
-    title: 'amigo-certo',
+    titleTemplate: '%s',
+    title: 'Amigo Certo',
     htmlAttrs: {
       lang: 'en'
     },
