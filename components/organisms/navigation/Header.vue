@@ -1,38 +1,32 @@
 <template>
   <v-app-bar
-      clipped-left
-      app
+    clipped-left
+    app
     >
-      <v-row>
-        <v-col
-          cols="6"
-          xs="6"
-          sm="6"
-          md="6"
-          lg="6">
+      <LogoApp />
 
-        </v-col>
-        <v-col
-          cols="6"
-          xs="6"
-          sm="6"
-          md="6"
-          lg="6">
-           <v-toolbar-title v-text="title" />
-        </v-col>
-      </v-row>
-
-
-
+      <UserMenu />
     </v-app-bar>
 </template>
 
 <script>
+import UserMenu from '@/components/molecules/UserMenu.vue'
+import LogoApp from '@/components/atoms/LogoApp.vue'
 export default {
-  data() {
-    return {
-      title: 'Amigo Certo'
-    }
+  components:  {
+    UserMenu,
+    LogoApp
   }
 }
 </script>
+
+<style lang="scss">
+  .v-toolbar__content, .v-toolbar__extension {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+  }
+</style>

@@ -1,4 +1,6 @@
-module.exports = {
+
+import pt from 'vuetify/es5/locale/pt'
+export default {
   treeShake: true,
   customVariables: ['~/assets/variables.scss'],
   theme: {
@@ -20,5 +22,9 @@ module.exports = {
         error: '#c82e2d'
       }
     }
+  },
+  lang: {
+    locales: { pt },
+    current: 'pt'
   }
 }

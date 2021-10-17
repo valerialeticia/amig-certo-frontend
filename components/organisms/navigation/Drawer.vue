@@ -9,10 +9,12 @@
       permanent
       app
     >
-      <v-list>
+      <v-list
+        v-for="(item, i) in items"
+        :key="i"
+        class="py-0">
+        <v-divider v-if="item.divider" />
         <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
           :to="item.to"
           router
           exact
@@ -57,27 +59,12 @@
 </template>
 
 <script>
+import settings from '@/config/appSettings'
 export default {
   data () {
     return {
       drawer: false,
-      items: [
-        {
-          icon: 'mdi-account-group',
-          title: 'Serviços',
-          to: '/services'
-        },
-        {
-          icon: 'mdi-phone',
-          title: 'Atendimento',
-          to: '/attendance'
-        },
-        {
-          icon: 'mdi-help-circle',
-          title: 'Sobre nós',
-          to: '/about-us'
-        }
-      ],
+      items: settings.menuItems,
       mini: false
     }
   }
