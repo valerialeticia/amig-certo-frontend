@@ -7,5 +7,5 @@ Front-end do projeto Amigo Certo. Site voltado para o serviço de voluntariado p
 
 ## Instalação
 
-Após clonar o projeto local é necessário utilizar o comando ``npm run install`` para instalação das dependências do projeto, em seguida rodar o comando ``npm run dev``
+Após clonar o projeto é necessário utilizar o comando ``npm run install`` para instalação das dependências do projeto, em seguida rodar o comando ``npm run dev``
 para rodar o projeto local.
