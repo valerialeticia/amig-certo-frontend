@@ -3,7 +3,7 @@ export default {
     {
       icon: 'mdi-account-group',
       title: 'Serviços',
-      to: '/options',
+      to: '/services',
       divider: true
     },
     {

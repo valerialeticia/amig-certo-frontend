@@ -16,6 +16,10 @@ $theme: (
   error: #c82e2d
 );
 
+a {
+  text-decoration: none;
+}
+
 $headings: (
   'h1': (
     'size': 6rem,

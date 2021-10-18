@@ -6,7 +6,7 @@
 
 
     <v-main>
-      <v-container>
+      <v-container class="mx-0">
         <Nuxt />
       </v-container>
     </v-main>
