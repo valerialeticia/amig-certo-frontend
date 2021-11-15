@@ -3,17 +3,11 @@ import * as config from './config'
 export default {
   ssr: false,
   head: config.head,
-  css: [
-  ],
-  plugins: [
-  ],
+  css: [],
+  plugins: config.plugins,
   components: true,
-  buildModules: [
-    '@nuxtjs/vuetify',
-  ],
-  modules: [
-  ],
+  buildModules: config.buildModules,
+  modules: config.modules,
   vuetify: config.vuetify,
-  build: {
-  }
+  build: {}
 }

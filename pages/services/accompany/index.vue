@@ -15,7 +15,7 @@
         md="12"
         sm="12"
         xs="12">
-        <PageTitle icon="mdi-forum" title="Comapnhia" subtitle="Neste serviço o voluntário irá fazer companhia ao idoso seja lá onde ele estiver. Podendo apenas conversar,
+        <PageTitle icon="mdi-forum" title="Companhia" subtitle="Neste serviço o voluntário irá fazer companhia ao idoso seja lá onde ele estiver. Podendo apenas conversar,
           jogar algum jogo, ir ao cinema ou qualquer atividade em que o idoso desejar." :page-subtitle="true" />
       </v-col>
     </v-row>
