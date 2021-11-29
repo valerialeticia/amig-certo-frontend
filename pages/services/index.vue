@@ -7,7 +7,7 @@
     </v-row>
     <v-row>
       <v-col
-        v-for="(item, i) in items" :key="i"
+        v-for="(item, i) in $i18n.messages.pt.services.items" :key="i"
         cols="12"
         lg="6"
         md="6"
@@ -27,30 +27,6 @@ export default {
   components: {
     PageTitle,
     ServiceCard
-  },
-
-  data() {
-    return {
-      items: [
-        {
-          title: 'Companhia',
-          icon: 'mdi-forum',
-          link: '/services/accompany'
-        },
-        {
-          title: 'Acompanhamento Médico',
-          icon: 'mdi-hospital-box'
-        },
-        {
-          title: 'Uber Amigo Certo',
-          icon: 'mdi-car-hatchback'
-        },
-        {
-          title: 'Outros Serviços',
-          icon: 'mdi-cogs'
-        }
-      ]
-    }
   }
 }
 </script>

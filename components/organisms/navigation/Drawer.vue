@@ -10,7 +10,7 @@
       app
     >
       <v-list
-        v-for="(item, i) in items"
+        v-for="(item, i) in $i18n.messages.pt.drawer.menuItems"
         :key="i"
         class="py-0">
         <v-divider v-if="item.divider" />
@@ -48,7 +48,7 @@
                 </v-list-item-action>
                 <v-list-item-content>
                 <v-list-item-title>
-                    Ocultar menu
+                    {{  $t('drawer.hideMenuButton') }}
                 </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
@@ -59,14 +59,16 @@
 </template>
 
 <script>
-import settings from '@/config/appSettings'
 export default {
   data () {
     return {
       drawer: false,
-      items: settings.menuItems,
       mini: false
     }
+  },
+
+  created() {
+    this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs ? this.mini = true : null
   }
 }
 </script>

@@ -9,5 +9,6 @@ export default {
   buildModules: config.buildModules,
   modules: config.modules,
   vuetify: config.vuetify,
-  build: {}
+  build: {},
+  i18n: config.i18n
 }

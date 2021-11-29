@@ -5,6 +5,12 @@ $font-size-root: 15px;
 $body-font-family: 'Lato', sans-serif;
 $heading-font-family: $body-font-family;
 $size-x-large: 1.21rem;
+$grey-background: #f6f6f6;
+
+
+$light:(
+  'background': $grey-background
+);
 
 
 $theme: (

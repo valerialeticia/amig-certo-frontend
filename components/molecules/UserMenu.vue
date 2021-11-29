@@ -2,7 +2,7 @@
   <div class="d-flex">
     <v-icon
       color="primary">
-      mdi-account-circle
+      {{ $t('userMenu.accountIcon')}}
     </v-icon>
     <v-menu
       bottom
@@ -13,13 +13,13 @@
             color="primary"
             v-bind="attrs"
             v-on="on">
-            mdi-chevron-down
+            {{ $t('userMenu.arrowIcon')}}
           </v-icon>
         </template>
 
         <v-list>
           <v-list-item
-            v-for="(item, index) in items"
+            v-for="(item, index) in $i18n.messages.pt.userMenu.items"
             :key="index"
           >
             <v-icon class="mr-1">{{ item.icon }}</v-icon>
@@ -29,18 +29,3 @@
     </v-menu>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      items: [
-        {
-          title: 'Sair',
-          icon: 'mdi-arrow-left-bottom'
-        }
-      ]
-    }
-  }
-}
-</script>
