@@ -9,20 +9,43 @@
       </v-col>
     </v-row>
 
-    <v-row>
-      <v-col>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tortor pellentesque, rhoncus mi in,
-          pharetra purus. Nunc at leo eu arcu tempus pellentesque a sit amet leo. Vestibulum augue tellus, volutpat et
-          enim sit amet, auctor molestie odio. Integer quis mi ac nisl finibus venenatis. Ut ligula lacus, blandit sit
-          amet rhoncus a, cursus at felis. Suspendisse nibh erat, fermentum vel erat vitae, placerat luctus mauris.
-          Pellentesque a porttitor diam. Nulla nec venenatis urna. Nullam dolor tortor, placerat quis lectus eu, mattis
-          finibus lorem. Aenean vel urna eu quam mollis pellentesque in at eros. Aliquam sed imperdiet mi. Etiam non risus
-          ligula. Quisque ac ante quis nisl consectetur dignissim nec vel elit. Morbi sit amet ex iaculis, dapibus nunc et,
-          eleifend mi. Duis eget ultricies leo.</p>
-          <v-img width="400" :src="require('../../assets/images/acompanhamento.jpg')" />
-      </v-col>
-    </v-row>
+    <v-tabs
+      v-model="tab"
+      background-color="transparent"
+      grow
+    >
+      <v-tab
+        v-for="item in $i18n.messages.pt.aboutUs.tabItems"
+        :key="item"
+      >
+        {{ item }}
+      </v-tab>
+    </v-tabs>
+
+    <v-tabs-items v-model="tab">
+      <v-tab-item>
+        <v-card
+          flat
+        >
+          <h3 class="mt-2">{{$t('aboutUs.title')}}</h3>
+          <p>{{$t('aboutUs.descripAboutUs')}}</p>
+          <h3>{{$t('aboutUs.subtitle')}}</h3>
+          <v-img width="600" class="my-3" :src="require('../../assets/images/02.svg')" />
+          <p>{{$t('aboutUs.descripAmigoCerto')}}</p>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item>
+        <v-card
+          flat
+        >
+          <h3 class="mt-2">{{$t('aboutUs.volunteeringTitle')}}</h3>
+          <v-img width="600" class="my-3" :src="require('../../assets/images/05.svg')" />
+          <p>{{$t('aboutUs.firstTextVolunteering')}}</p>
+          <p>{{$t('aboutUs.secondTextVolunteering')}}</p>
+          <p>{{$t('aboutUs.thirdTextVolunteering')}}</p>
+        </v-card>
+      </v-tab-item>
+    </v-tabs-items>
   </v-container>
 </template>
 
@@ -32,5 +55,11 @@ export default {
   components: {
     PageTitle
   },
+
+  data() {
+    return {
+      tab: null
+    }
+  }
 }
 </script>
