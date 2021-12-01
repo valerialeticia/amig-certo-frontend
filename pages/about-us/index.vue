@@ -30,7 +30,7 @@
           <h3 class="mt-2">{{$t('aboutUs.title')}}</h3>
           <p>{{$t('aboutUs.descripAboutUs')}}</p>
           <h3>{{$t('aboutUs.subtitle')}}</h3>
-          <v-img width="600" class="my-3" :src="require('../../assets/images/02.svg')" />
+          <v-img width="600" class="my-3" :src="require('../../assets/images/voluntariado.png')" />
           <p>{{$t('aboutUs.descripAmigoCerto')}}</p>
         </v-card>
       </v-tab-item>
@@ -39,7 +39,7 @@
           flat
         >
           <h3 class="mt-2">{{$t('aboutUs.volunteeringTitle')}}</h3>
-          <v-img width="600" class="my-3" :src="require('../../assets/images/05.svg')" />
+          <v-img width="600" class="my-3" :src="require('../../assets/images/02.svg')" />
           <p>{{$t('aboutUs.firstTextVolunteering')}}</p>
           <p>{{$t('aboutUs.secondTextVolunteering')}}</p>
           <p>{{$t('aboutUs.thirdTextVolunteering')}}</p>

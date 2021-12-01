@@ -12,6 +12,7 @@
     <v-row>
       <v-col>
         <h3>Lorem ipsum</h3>
+        <v-img width="400" :src="require('../../assets/images/05.svg')" class="mb-3" />
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tortor pellentesque, rhoncus mi in,
           pharetra purus. Nunc at leo eu arcu tempus pellentesque a sit amet leo. Vestibulum augue tellus, volutpat et
           enim sit amet, auctor molestie odio. Integer quis mi ac nisl finibus venenatis. Ut ligula lacus, blandit sit

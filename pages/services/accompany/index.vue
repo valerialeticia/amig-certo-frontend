@@ -1,5 +1,6 @@
 <template>
   <v-container fluid class="mx-0">
+    <BackButton  class="mb-3" />
     <v-row>
       <v-col cols="12" sm="12" md="12">
         <PageTitle
@@ -121,6 +122,11 @@
           </v-row>
         </v-form>
       </v-col>
+
+      <SuccessModal
+      :show="showSuccessModal"
+      message="Formulário preenchido com sucesso!"
+      @close="showSuccessModal = !showSuccessModal" />
     </v-row>
   </v-container>
 
@@ -129,10 +135,14 @@
 <script>
 import PageTitle from '@/components/molecules/PageTitle.vue'
 import ServiceCard from '@/components/organisms/cards/ServiceCard.vue'
+import SuccessModal from '@/components/organisms/modals/SuccessModal.vue'
+import BackButton from '@/components/atoms/BackButton.vue'
 export default {
   components: {
     PageTitle,
-    ServiceCard
+    ServiceCard,
+    SuccessModal,
+    BackButton
   },
 
   data() {
@@ -160,13 +170,16 @@ export default {
           v => !!v || 'Preencha o campo Atividades'
         ]
       },
-      items: ['Ir ao cinema', 'Jogar Bingo', 'Ir ao shopping']
+      items: ['Ir ao cinema', 'Jogar Bingo', 'Ir ao shopping'],
+      showSuccessModal: false
     }
   },
 
   methods: {
     validate () {
       this.$refs.form.validate()
+      this.showSuccessModal = true
+      this.$refs.form.reset()
     },
     reset () {
       this.$refs.form.reset()

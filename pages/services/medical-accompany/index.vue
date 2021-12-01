@@ -1,5 +1,6 @@
 <template>
   <v-container fluid class="mx-0">
+    <BackButton  class="mb-3" />
     <v-row>
       <v-col cols="12" sm="12" md="12">
         <PageTitle
@@ -24,9 +25,11 @@
 
 <script>
 import PageTitle from '@/components/molecules/PageTitle.vue'
+import BackButton from '@/components/atoms/BackButton.vue'
 export default {
   components: {
-    PageTitle
+    PageTitle,
+    BackButton
   }
 
 }

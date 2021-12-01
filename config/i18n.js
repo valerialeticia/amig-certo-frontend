@@ -92,6 +92,10 @@ export default {
           diferenciamos também o seu grau de comprometimento: ações mais permanentes, que implicam em maiores compromissos,
           requerem um determinado tipo de voluntário, e podem levá-lo inclusive a uma "profissionalização voluntária"; existem
           também ações pontuais, esporádicas, que mobilizam outro perfil de indivíduos.`
+        },
+        sucessModal: {
+          closeButton: 'mdi-close',
+          checkIcon: 'mdi-checkbox-marked-circle'
         }
       }
     }
