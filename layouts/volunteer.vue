@@ -2,7 +2,7 @@
   <v-app>
     <Header />
 
-    <Drawer :items="$i18n.messages.pt.drawer.menuItems" />
+    <Drawer :items="$i18n.messages.pt.drawer.menuItemsVolunteer" />
 
 
     <v-main>

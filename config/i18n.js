@@ -8,7 +8,8 @@ export default {
         login: {
           welcomeMessage: 'Seja bem-vindo(a) ao Amigo Certo!',
           loginButon: 'entrar',
-          registerButton: 'registrar-se'
+          registerButton: 'continuar',
+          registrationButton: 'registrar-se'
         },
         userMenu: {
           accountIcon: 'mdi-account-circle',
@@ -41,7 +42,15 @@ export default {
               divider: true
             }
           ],
-          hideMenuButton: 'Ocultar menu'
+          hideMenuButton: 'Ocultar menu',
+          menuItemsVolunteer: [
+            {
+              icon: 'mdi-frequently-asked-questions',
+              title: 'Pedidos',
+              to: '/requests',
+              divider: true
+            },
+          ]
         },
         services: {
           items: [
@@ -104,6 +113,15 @@ export default {
           whatsappIcon: 'mdi-whatsapp',
           whatsappText: 'Whatsapp: 81 99999-9999',
           questionsTitle: 'Perguntas frequentes'
+        },
+        requests: {
+          nameLabel: 'Nome',
+          reasonLabel: 'Motivo',
+          dateLabel: 'Data',
+          timeLabel: 'Período',
+          placeLabel: 'Lugar',
+          activityLabel: 'Atividade',
+          acceptButton: 'Aceitar'
         }
       }
     }

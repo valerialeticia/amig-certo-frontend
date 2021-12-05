@@ -16,6 +16,12 @@
         lazy-validation
       >
         <v-text-field
+          v-model="form.name"
+          label="Nome"
+          required
+        />
+
+        <v-text-field
           v-model="form.username"
           label="Username"
           required
@@ -23,15 +29,22 @@
 
         <v-text-field
           v-model="form.email"
-          :rules="[rules.required, rules.emailRules]"
+          :rules="[...rules.required, ...rules.emailRules]"
           label="E-mail"
           required
         />
 
+        <v-select
+          v-model="form.profiles"
+          :items="items"
+          :rules="rules.required"
+          label="Perfil"
+          required />
+
         <v-text-field
           v-model="form.password"
           :append-icon="changeEye ? 'mdi-eye' : 'mdi-eye-off'"
-          :rules="[rules.required, rules.min]"
+          :rules="[...rules.required, ...rules.min]"
           :type="changeEye ? 'text' : 'password'"
           name="input-10-1"
           label="Senha"
@@ -56,30 +69,33 @@
 
 <script>
 export default {
-  layout: 'login',
+  layout: 'registration',
   data() {
     return {
       form: {
         email: '',
         password: '',
-        username: ''
+        username: '',
+        name:  '',
+        profiles: ''
       },
       valid: true,
       rules:{
-        required: value => !!value || 'Preencha o campo',
-        min: v => v.length >= 8 || 'Mínimo 8 caracteres',
+        required: [value => !!value || 'Preencha o campo'],
+        min: [v => v.length >= 8 || 'Mínimo 8 caracteres'],
         emailRules: [
         v => !!v || 'Preencha o campo e-mail',
         v => /.+@.+\..+/.test(v) || 'E-mail inválido',
         ],
       },
-      changeEye: false
+      changeEye: false,
+      items: ['Cliente', 'Voluntário']
     }
   },
 
   methods: {
     register() {
-      this.$router.push('/')
+      this.$router.push('/register/volunteer')
     }
   }
 }

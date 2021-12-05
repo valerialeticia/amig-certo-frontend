@@ -10,7 +10,7 @@
       app
     >
       <v-list
-        v-for="(item, i) in $i18n.messages.pt.drawer.menuItems"
+        v-for="(item, i) in items"
         :key="i"
         class="py-0">
         <v-divider v-if="item.divider" />
@@ -60,6 +60,13 @@
 
 <script>
 export default {
+  props: {
+    items: {
+      type: Array,
+      default: () => []
+    }
+  },
+
   data () {
     return {
       drawer: false,
