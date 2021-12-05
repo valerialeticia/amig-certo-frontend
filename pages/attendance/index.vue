@@ -5,22 +5,45 @@
         <PageTitle
           icon="mdi-phone"
           title="Atendimento"
-          subtitle="Você pode solicitar atendimento a partir dos seguintes canais:" />
+          subtitle="Tem alguma dúvida? Fale conosco." />
       </v-col>
     </v-row>
 
     <v-row>
       <v-col>
-        <h3>Lorem ipsum</h3>
+        <h3>{{ $t('attendance.channelsTitle') }}</h3>
         <v-img width="400" :src="require('../../assets/images/05.svg')" class="mb-3" />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu tortor pellentesque, rhoncus mi in,
-          pharetra purus. Nunc at leo eu arcu tempus pellentesque a sit amet leo. Vestibulum augue tellus, volutpat et
-          enim sit amet, auctor molestie odio. Integer quis mi ac nisl finibus venenatis. Ut ligula lacus, blandit sit
-          amet rhoncus a, cursus at felis. Suspendisse nibh erat, fermentum vel erat vitae, placerat luctus mauris.
-          Pellentesque a porttitor diam. Nulla nec venenatis urna. Nullam dolor tortor, placerat quis lectus eu, mattis
-          finibus lorem. Aenean vel urna eu quam mollis pellentesque in at eros. Aliquam sed imperdiet mi. Etiam non risus
-          ligula. Quisque ac ante quis nisl consectetur dignissim nec vel elit. Morbi sit amet ex iaculis, dapibus nunc et,
-          eleifend mi. Duis eget ultricies leo.</p>
+        <v-card class="mt-4">
+          <v-card-text>
+            <v-icon>{{ $t('attendance.phoneIcon') }}</v-icon>
+            {{ $t('attendance.phoneText') }}
+          </v-card-text>
+          <v-card-text>
+            <v-icon>{{ $t('attendance.whatsappIcon') }}</v-icon>
+            {{ $t('attendance.whatsappText') }}
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-row>
+      <v-col>
+        <h3>{{ $t('attendance.questionsTitle') }}</h3>
+        <v-card>
+          <v-expansion-panels class="mt-3">
+            <v-expansion-panel
+              v-for="(item,i) in questions"
+              :key="i"
+            >
+              <v-expansion-panel-header>
+                {{ item.title }}
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                {{ item.description  }}
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
@@ -32,5 +55,24 @@ export default {
   components: {
     PageTitle
   },
+
+  data() {
+    return {
+      questions: [
+        {
+          title: 'Como solicito serviço?',
+          description: 'Para solicitar é necessário ir na seção de "Seriços" no navigation na esquerda e em seguida clicar nele.'
+        },
+        {
+          title: 'Quais os serviços disponíveis?',
+          description: 'Existem três serviços, sendo eles: Companhia, Acompanhamento Médico e Uber Amigo Certo mas infelizmente apenas o Acompanhmento está funcionando.'
+        },
+        {
+          title: 'Até quanto tempo dura?',
+          description: 'Irá  depender da disponibilidade do voluntário.'
+        }
+      ]
+    }
+  }
 }
 </script>

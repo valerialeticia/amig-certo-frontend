@@ -96,6 +96,14 @@ export default {
         sucessModal: {
           closeButton: 'mdi-close',
           checkIcon: 'mdi-checkbox-marked-circle'
+        },
+        attendance: {
+          channelsTitle: 'Canais disponíveis:',
+          phoneIcon: 'mdi-phone',
+          phoneText: 'Telefone: 81 9999-9999',
+          whatsappIcon: 'mdi-whatsapp',
+          whatsappText: 'Whatsapp: 81 99999-9999',
+          questionsTitle: 'Perguntas frequentes'
         }
       }
     }
