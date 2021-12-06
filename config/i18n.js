@@ -17,7 +17,8 @@ export default {
           items: [
             {
               title: 'Sair',
-              icon: 'mdi-arrow-left-bottom'
+              icon: 'mdi-arrow-left-bottom',
+              to: '/login'
             }
           ]
         },
@@ -45,11 +46,17 @@ export default {
           hideMenuButton: 'Ocultar menu',
           menuItemsVolunteer: [
             {
-              icon: 'mdi-frequently-asked-questions',
+              icon: 'mdi-clipboard-multiple-outline',
               title: 'Pedidos',
               to: '/requests',
               divider: true
             },
+            {
+              icon: 'mdi-clipboard-check-outline',
+              title: 'Pedidos aceitos',
+              to: '/requests/accepted',
+              divider: true
+            }
           ]
         },
         services: {

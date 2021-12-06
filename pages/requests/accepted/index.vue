@@ -3,15 +3,15 @@
     <v-row>
       <v-col cols="12" sm="12" md="12">
         <PageTitle
-          icon="mdi-clipboard-multiple-outline"
-          title="Pedidos"
-          subtitle="Aqui está a lista de pedido solicitados." />
+          icon="mdi-clipboard-check-outline"
+          title="Pedidos aceitos"
+          subtitle="Aqui está os pedidos aceitos." />
       </v-col>
     </v-row>
 
     <v-row>
       <v-col>
-        <v-card v-for="(item, i) in requests" :key="i" class="mb-8 px-3">
+        <v-card v-for="(item, i) in items" :key="i" class="mb-8 px-3">
           <v-row>
             <v-col
               cols="12"
@@ -104,29 +104,16 @@
               </span>
             </v-col>
           </v-row>
-          <v-row class="d-flex justify-end">
-            <v-col
-              cols="12"
-              xl="2"
-              lg="2"
-              md="2"
-              sm="12"
-              xs="12">
-              <v-btn
-              color="primary"
-              @click="accept(item, i)">
-                {{ $t('requests.acceptButton') }}
-              </v-btn>
-            </v-col>
-          </v-row>
         </v-card>
       </v-col>
     </v-row>
   </v-container>
 </template>
 
+
 <script>
 import PageTitle from '@/components/molecules/PageTitle.vue'
+
 export default {
   layout: 'volunteer',
 
@@ -136,36 +123,13 @@ export default {
 
   data() {
     return {
-      requests: [
-        {
-          name: 'Lurdes',
-          reason: 'Se sente sozinha',
-          date: '10/12/2021',
-          time: '3 horas',
-          place: 'Shopping Rio Mar',
-          activity: 'Ir ao cinema'
-        },
-        {
-          name: 'Marcos',
-          reason: 'Se sente sozinho',
-          date: '11/12/2021',
-          time: '5 horas',
-          place: 'Shopping Rio Mar',
-          activity: 'Ir ao cinema'
-        }
-      ]
+      items: []
     }
   },
 
-  methods: {
-    accept(item, index) {
-      this.$toast.success('Pedido aceito com sucesso!')
-      this.requests.splice(index, 1)
-      this.$router.push({
-        path: '/requests/accepted',
-        query: item
-      })
-    }
+  created() {
+    this.items.push(this.$route.query)
+    console.log(this.$route.query)
   }
 }
 </script>

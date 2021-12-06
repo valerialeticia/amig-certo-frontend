@@ -88,8 +88,11 @@ export default {
     methods: {
       login (logininfo) {
         this.$refs.form.validate()
-        this.$router.push('/')
-        this.$toast.success('login feito com sucesso!')
+        setTimeout(() => {
+          this.$nuxt.$loading.start()
+          this.$router.push('/')
+          this.$toast.success('Login feito com sucesso!')
+        }, 3000)
       },
 
       register() {

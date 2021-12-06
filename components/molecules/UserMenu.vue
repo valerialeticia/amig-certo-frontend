@@ -20,10 +20,11 @@
         <v-list>
           <v-list-item
             v-for="(item, index) in $i18n.messages.pt.userMenu.items"
-            :key="index"
-          >
-            <v-icon class="mr-1">{{ item.icon }}</v-icon>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            :key="index">
+            <nuxt-link :to="item.to" class="d-flex">
+              <v-icon class="mr-1">{{ item.icon }}</v-icon>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </nuxt-link>
           </v-list-item>
         </v-list>
     </v-menu>

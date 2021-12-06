@@ -10,5 +10,9 @@ export default {
   modules: config.modules,
   vuetify: config.vuetify,
   build: {},
-  i18n: config.i18n
+  i18n: config.i18n,
+  loading: {
+    color: '#00ffd4',
+    height: '3px'
+  }
 }

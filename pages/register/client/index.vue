@@ -115,7 +115,8 @@ export default {
 
   methods: {
     register() {
-      this.$router.push('/register/volunteer')
+      this.$toast.success('Cadastro feito com sucesso!')
+      this.$router.push('/')
     }
   }
 }
