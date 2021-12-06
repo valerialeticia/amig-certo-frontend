@@ -34,8 +34,8 @@
           required
         />
 
-        <v-select
-          v-model="form.profiles"
+          <v-select
+          v-model="form.profile"
           :items="items"
           :rules="rules.required"
           label="Perfil"
@@ -43,14 +43,26 @@
 
         <v-text-field
           v-model="form.password"
-          :append-icon="changeEye ? 'mdi-eye' : 'mdi-eye-off'"
+          :append-icon="changeEyePassword ? 'mdi-eye' : 'mdi-eye-off'"
           :rules="[...rules.required, ...rules.min]"
-          :type="changeEye ? 'text' : 'password'"
+          :type="changeEyePassword ? 'text' : 'password'"
           name="input-10-1"
           label="Senha"
           hint="Mínimo 8 caracteres"
           counter
-          @click:append="changeEye = !changeEye"
+          @click:append="changeEyePassword = !changeEyePassword"
+        />
+
+        <v-text-field
+          v-model="form.confirmPassword"
+          :append-icon="changeEeyeConfirmPassword ? 'mdi-eye' : 'mdi-eye-off'"
+          :rules="[...rules.required, ...rules.min, ...handlePasswordFields]"
+          :type="changeEeyeConfirmPassword ? 'text' : 'password'"
+          name="input-10-1"
+          label="Confirmar senha"
+          hint="Mínimo 8 caracteres"
+          counter
+          @click:append="changeEeyeConfirmPassword = !changeEeyeConfirmPassword"
         />
 
         <v-btn
@@ -77,7 +89,8 @@ export default {
         password: '',
         username: '',
         name:  '',
-        profiles: ''
+        profile: '',
+        confirmPassword: ''
       },
       valid: true,
       rules:{
@@ -86,10 +99,17 @@ export default {
         emailRules: [
         v => !!v || 'Preencha o campo e-mail',
         v => /.+@.+\..+/.test(v) || 'E-mail inválido',
-        ],
+        ]
       },
-      changeEye: false,
+      changeEyePassword: false,
+      changeEeyeConfirmPassword: false,
       items: ['Cliente', 'Voluntário']
+    }
+  },
+
+  computed: {
+    handlePasswordFields() {
+      return [v => v  == this.form.password || 'Senhas não iguais']
     }
   },
 

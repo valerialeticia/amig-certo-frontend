@@ -49,7 +49,7 @@
           class="mr-4 mt-4"
           @click="register"
         >
-          {{  $t('login.registerButton') }}
+          {{  $t('login.registrationButton') }}
         </v-btn>
       </v-form>
 
@@ -89,6 +89,7 @@ export default {
       login (logininfo) {
         this.$refs.form.validate()
         this.$router.push('/')
+        this.$toast.success('login feito com sucesso!')
       },
 
       register() {

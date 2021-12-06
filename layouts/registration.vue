@@ -3,7 +3,7 @@
     <RegistrationHeader />
 
     <v-main>
-      <v-container class="mx-0">
+      <v-container fluid class="height mx-0">
         <Nuxt />
       </v-container>
     </v-main>
@@ -19,3 +19,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .height {
+    height: 100%;
+  }
+</style>
