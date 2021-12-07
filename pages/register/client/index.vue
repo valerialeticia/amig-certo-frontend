@@ -114,9 +114,18 @@ export default {
   },
 
   methods: {
-    register() {
-      this.$toast.success('Cadastro feito com sucesso!')
-      this.$router.push('/')
+    async register() {
+      const params = {
+        ...this.$route.query,
+        ...this.form
+      }
+      try {
+        await this.$services.RegisterService.createUser(params)
+        this.$router.push('/')
+        this.$toast.success('Cadastro feito com sucesso!')
+      } catch(error) {
+        this.$toast.error('Não foi possível criar o usuário')
+      }
     }
   }
 }

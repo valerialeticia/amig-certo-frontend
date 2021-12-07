@@ -116,9 +116,15 @@ export default {
   methods: {
     register() {
       if(this.form.profile.toLowerCase() == 'voluntário') {
-        this.$router.push('/register/volunteer')
+        this.$router.push({
+          path: '/register/volunteer',
+          query: this.form
+        })
       } else {
-        this.$router.push('/register/client')
+        this.$router.push({
+          path: '/register/client',
+          query: this.form
+        })
       }
     }
   }

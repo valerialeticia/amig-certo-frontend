@@ -5,5 +5,8 @@ export default [
   {
     src: '~plugins/globalComponents.js',
     mode: 'client'
+  },
+  {
+    src: '~plugins/context.js'
   }
 ]
